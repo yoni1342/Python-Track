@@ -1,0 +1,29 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+num_testcase = int(input())
+
+for test in range(num_testcase):
+    num_cubes = int(input())
+    cubes = list(map(int, input().split(' ')))
+    
+    left = 0
+    right = num_cubes
+    prev = float('-inf')
+    
+    while(left<=right):
+        if cubes[left]!=cubes[right]:
+            maxCube = max(cubes[left], cubes[right])
+            if maxCube > prev:
+                print(False)
+                break
+            else:
+                if maxCube == cubes[left]:
+                    left+=1
+                else:
+                    right-=1
+        else:
+            if cubes[right]>prev:
+                print(False)
+                break
+            else:
+                right-=1
+                    
