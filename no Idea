@@ -1,0 +1,12 @@
+def no_idea():
+    n_m = input().split(' ')
+    n,a,b = input().split(' '),set(input().split(' ')), set(input().split(' '))
+    happiness = 0
+
+    for i in range(int(n_m[0])):
+        if n[i] in a:
+            happiness+=1
+        elif n[i] in b:
+            happiness-=1
+    print(happiness)
+no_idea()
