@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+numEngish = int(input())
+EngRol = set(input().split())
+numFrenc = int(input())
+FrenchRol = set(input().split())
+
+ans = EngRol.difference(FrenchRol)
+
+print(len(ans))
