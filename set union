@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+numsEnglish = int(input())
+setEnglish = set(input().split())
+numsFrench = int(input())
+setFranch = set(input().split())
+
+answer = len(setEnglish.union(setFranch))
+print(answer)
