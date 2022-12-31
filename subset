@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+lis = list(map(int, input().split()))
+A = set(lis)
+
+n = int(input())
+
+ans = True
+
+for i in range(n):
+    B = set(map(int, input().split()))
+    ans = ans and B.issubset(A)
+
+print(ans)
