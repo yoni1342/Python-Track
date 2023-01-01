@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import defaultdict
+
+n, m = map(int, input().split())
+indexOf = defaultdict(list)
+
+for idx in range(n):
+    ch = input()
+    indexOf[ch].append(idx+1)
+
+for elm in range(m):
+    groupB = input()
+    
+    if groupB in indexOf:
+        print(*indexOf[groupB])
+    else:
+        print(-1)
