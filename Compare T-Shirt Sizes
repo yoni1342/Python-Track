@@ -1,0 +1,30 @@
+from collections import Counter
+
+t  = int(input())
+
+for i in range(t):
+    a, b = input().split()
+    
+    aHash = Counter(a)
+    bHash = Counter(b)
+
+    if ('L' in aHash and 'S' in bHash) or ('M' in aHash and 'S' in bHash) or ('L' in aHash and 'M' in bHash):
+        print('>')
+    elif ('S' in aHash and 'L' in bHash) or ('S' in aHash and 'M' in bHash) or ('M' in aHash and "L" in bHash):
+        print('<')
+    elif 'L' in aHash and 'L' in bHash:
+        if aHash == bHash:
+            print("=")
+        elif aHash['X'] > bHash["X"]:
+            print(">")
+        else:
+            print("<")
+    elif 'S' in aHash and "S" in bHash:
+        if aHash == bHash:
+            print("=")
+        elif aHash['X'] > bHash["X"]:
+            print("<")
+        else:
+            print(">")
+    else:
+        print("=")
