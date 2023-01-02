@@ -1,0 +1,19 @@
+n = int(input())
+Max = 0
+Min = 0
+count = 0
+arr = list(map(int, input().split()))
+ 
+for i in range(len(arr)):
+    if i == 0:
+        Max = arr[i]
+        Min = arr[i]
+    else:
+        if arr[i] > Max:
+            Max = arr[i]
+            count+=1
+        if arr[i] < Min:
+            Min = arr[i]
+            count+=1
+            
+print(count)
