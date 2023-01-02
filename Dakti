@@ -1,0 +1,19 @@
+import re
+n = int(input())
+for i in range(n):
+    word = input()
+    arr = word.split()
+    order = {}
+    for k in arr:
+        pattern = re.compile(r"[0-9]")
+        matches = pattern.finditer(k)
+ 
+        for match in matches:
+            order[match[0]] = k.replace(match[0], "")
+        
+    ans = sorted(order)
+    for j in range(len(ans)):
+        if j != len(ans)-1: 
+            print(order[ans[j]], end=" ")
+        else:
+            print(order[ans[j]])
